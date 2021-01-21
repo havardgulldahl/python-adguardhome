@@ -13,17 +13,17 @@ class AdGuardHomeClients:
         self._adguard = adguard
 
     async def _config(
-        self =None
-        name: str = None # example: localhost
-        ids: List[str] = None # IP, CIDR or MAC address
-        use_global_settings: Optional[bool] = None
-        filtering_enabled: Optional[bool] = None
-        parental_enabled: Optional[bool] = None
-        safebrowsing_enabled: Optional[bool] = None
-        safesearch_enabled: Optional[bool] = None
-        use_global_blocked_services: Optional[bool] = None
-        blocked_services: Optional[List[str]] = None 
-        upstreams: Optional[List[str]] = None 
+        self,
+        name: str = None, # example: localhost
+        ids: List[str] = None, # IP, CIDR or MAC address
+        use_global_settings: Optional[bool] = None,
+        filtering_enabled: Optional[bool] = None,
+        parental_enabled: Optional[bool] = None,
+        safebrowsing_enabled: Optional[bool] = None,
+        safesearch_enabled: Optional[bool] = None,
+        use_global_blocked_services: Optional[bool] = None,
+        blocked_services: Optional[List[str]] = None ,
+        upstreams: Optional[List[str]] = None ,
     ):
         """Configure client on AdGuard Home."""
         if enabled is None:
@@ -39,7 +39,7 @@ class AdGuardHomeClients:
 
     async def status(self)-> dict:
         """Get information about configured clients."""
-        response = await self._adguard._request("/clients")
+        response = await self._adguard._request("clients")
         return response
 
 '''

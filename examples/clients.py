@@ -8,7 +8,7 @@ from adguardhome import AdGuardHome
 
 async def main():
     """Show example clients controlling from your AdGuard Home instance."""
-    async with AdGuardHome("192.168.1.2") as adguard:
+    async with AdGuardHome("127.0.0.1", port=45158) as adguard:
         version = await adguard.version()
         print("AdGuard version:", version)
 

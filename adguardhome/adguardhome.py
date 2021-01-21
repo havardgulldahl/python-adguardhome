@@ -16,6 +16,7 @@ from .querylog import AdGuardHomeQueryLog
 from .safebrowsing import AdGuardHomeSafeBrowsing
 from .safesearch import AdGuardHomeSafeSearch
 from .stats import AdGuardHomeStats
+from .clients import AdGuardHomeClients
 
 
 class AdGuardHome:
@@ -60,6 +61,7 @@ class AdGuardHome:
         self.safebrowsing = AdGuardHomeSafeBrowsing(self)
         self.safesearch = AdGuardHomeSafeSearch(self)
         self.stats = AdGuardHomeStats(self)
+        self.clients = AdGuardHomeClients(self)
 
     async def _request(
         self,
